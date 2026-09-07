@@ -1,0 +1,636 @@
+*{box-sizing:border-box;
+    margin:0;
+    padding:0
+} 
+:root
+{
+    --bg:#090809;
+    --fg:#eee7df;
+    --muted:#958d86;
+    --cream:#e5d1b7;
+    --line:rgba(238,231,223,.14);
+    --serif:"Cormorant Garamond",Georgia,serif;
+    --sans:"DM Sans",Arial,sans-serif}
+html
+    {scroll-behavior:smooth}
+body
+{
+    background:var(--bg);
+    color:var(--fg);
+    font-family:var(--sans);
+    overflow-x:hidden
+}
+a
+{
+    color:inherit;
+    text-decoration:none}
+    button
+    {font:inherit}
+.grain
+{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:100;
+    opacity:.035;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")
+}
+.nav
+{
+    width:min(1380px,calc(100% - 80px));
+    height:82px;
+    margin:auto;
+    border-bottom:1px solid var(--line);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    position:relative;
+    z-index:10
+}
+.logo
+{
+    font:600 28px var(--serif)
+}
+.nav nav
+{
+    display:flex;
+    gap:32px
+}
+.nav nav a,.nav-link
+{
+    font-size:9px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--muted);transition:.3s
+}
+.nav nav a:hover,.nav nav a.active,.nav-link:hover
+{
+    color:var(--fg)
+}
+.nav-link span
+{
+    margin-left:5px
+}
+/* =========================================
+   VANTA CASE STUDY
+========================================= */
+
+.vanta-hero {
+    width: min(1380px, calc(100% - 80px));
+    margin: auto;
+    min-height: 90vh;
+    padding: 120px 0 120px;
+
+    display: grid;
+    grid-template-columns: 70px 1fr 1fr;
+    gap: 50px;
+
+    align-items: center;
+}
+
+.hero-label {
+    font-size: 9px;
+    letter-spacing: .15em;
+    color: #888;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+}
+
+
+.hero-content .small-label {
+    font-size: 9px;
+    letter-spacing: .15em;
+    color: #888;
+}
+
+
+.hero-content h1 {
+    font-family: "Anton", sans-serif;
+    font-size: clamp(100px, 15vw, 240px);
+    line-height: .8;
+    letter-spacing: -.03em;
+
+    margin: 45px 0 35px;
+}
+
+
+.hero-content h2 {
+    font-size: clamp(45px, 6vw, 85px);
+    line-height: .9;
+
+    margin-bottom: 35px;
+}
+
+
+.hero-content p {
+    max-width: 400px;
+
+    color: #888;
+
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+
+.hero-image img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    object-fit: cover;
+}
+
+
+
+/* =========================================
+   SECTIONS
+========================================= */
+
+.vanta-section {
+    width: min(1380px, calc(100% - 80px));
+
+    margin: auto;
+
+    padding: 150px 0;
+
+    border-top: 1px solid #242424;
+
+    display: grid;
+
+    grid-template-columns: 70px 1fr 1fr;
+
+    gap: 50px;
+}
+
+
+.section-number {
+    font-size: 9px;
+
+    color: #777;
+
+    letter-spacing: .15em;
+}
+
+
+.section-title span {
+    font-size: 9px;
+
+    color: #777;
+
+    letter-spacing: .15em;
+}
+
+
+.section-title h2 {
+    font-size: clamp(55px, 7vw, 105px);
+
+    line-height: .82;
+
+    letter-spacing: -.04em;
+
+    margin-top: 35px;
+}
+.section-title h2 span {
+    color: #e21b2d;
+    font-size: clamp(55px, 7vw, 105px);
+    line-height: .82;
+    letter-spacing: -.04em;
+    margin-top: 35px;
+}
+
+.section-text {
+    align-self: end;
+
+    max-width: 430px;
+}
+
+
+.section-text p {
+    color: #888;
+
+    font-size: 13px;
+
+    line-height: 1.9;
+
+    margin-bottom: 20px;
+}
+
+
+
+/* =========================================
+   IMAGES
+========================================= */
+
+.full-image {
+    grid-column: 2/4 ;
+
+    margin-top: 70px;
+}
+
+
+.full-image img {
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+}
+
+
+.image-grid {
+    grid-column: 2 / 4;
+
+    margin-top: 70px;
+
+    display: grid;
+
+    gap: 20px;
+}
+
+
+.two-column {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+
+.three-column {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+
+.image-grid img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    object-fit: cover;
+
+    transition: transform .5s ease;
+}
+
+
+.image-grid img:hover {
+    transform: translateY(-8px);
+}
+
+
+
+/* =========================================
+   COLOR SYSTEM
+========================================= */
+
+.color-system {
+    grid-column: 2 / 4;
+
+    margin-top: 70px;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+
+.color-card {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+.color {
+    width: 100%;
+
+    height: 160px;
+
+    margin-bottom: 10px;
+}
+
+
+.color-card span {
+    font-size: 9px;
+
+    letter-spacing: .12em;
+}
+
+
+.color-card small {
+    color: #777;
+
+    font-size: 9px;
+}
+
+
+.color.black {
+    background: #080808;
+}
+
+
+.color.red {
+    background: #e21b23;
+}
+
+
+.color.white {
+    background: #f2f2f2;
+}
+
+
+.color.gray {
+    background: #242424;
+}
+
+
+
+/* =========================================
+   POSTER
+========================================= */
+
+.poster-image {
+    grid-column: 2 / 4;
+
+    margin-top: 70px;
+
+    display: flex;
+
+    justify-content: center;
+}
+
+
+.poster-image img {
+    display: block;
+
+    width: min(600px, 100%);
+
+    height: auto;
+}
+
+
+
+/* =========================================
+   FINAL SECTION
+========================================= */
+
+.vanta-final {
+    width: min(1380px, calc(100% - 80px));
+
+    margin: auto;
+
+    padding: 180px 0 140px;
+
+    border-top: 1px solid #242424;
+}
+
+
+.vanta-final span {
+    font-size: 9px;
+
+    color: #777;
+
+    letter-spacing: .15em;
+}
+
+
+.vanta-final h2 {
+    font-family: "Anton", sans-serif;
+    font-size: clamp(90px, 15vw, 230px);
+    line-height: .8;
+    letter-spacing: -.04em;
+    margin: 60px 0 40px;
+}
+
+.vanta-final h2 span {
+    color: #e21b2d;
+    font-family: "Anton", sans-serif;
+    font-size: clamp(90px, 15vw, 230px);
+    line-height: .8;
+    letter-spacing: -.04em;
+    margin: 60px 0 40px;
+}
+
+.vanta-final p {
+    color: #888;
+
+    font-size: 12px;
+}
+/* =========================================
+   NEXT PROJECT
+========================================= */
+
+.next-project {
+    width: min(1380px, calc(100% - 80px));
+
+    margin: auto;
+
+    padding: 80px 0 140px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-end;
+
+    gap: 15px;
+}
+
+
+.next-project span {
+    font-size: 9px;
+
+    color: #777;
+
+    letter-spacing: .15em;
+}
+
+
+.next-project a {
+    font-family: "Anton", sans-serif;
+
+    font-size: clamp(28px, 4vw, 55px);
+
+    text-decoration: none;
+
+    color: inherit;
+
+    transition: opacity .3s ease;
+}
+
+
+.next-project a:hover {
+    opacity: .5;
+}
+
+
+
+/* =========================================
+   SCROLL ANIMATION
+========================================= */
+
+.reveal {
+    opacity: 0;
+
+    transform: translateY(35px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+}
+
+
+.reveal.show {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 800px) {
+
+    .vanta-hero,
+    .vanta-section,
+    .vanta-final,
+    .next-project,
+    footer {
+        width: calc(100% - 34px);
+    }
+
+
+    .vanta-hero {
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        padding: 90px 0 100px;
+
+        gap: 60px;
+    }
+
+
+    .hero-label {
+        writing-mode: initial;
+
+        transform: none;
+    }
+
+
+    .hero-content h1 {
+        font-size: clamp(90px, 27vw, 150px);
+
+        margin: 40px 0;
+    }
+
+
+    .hero-content h2 {
+        font-size: clamp(48px, 14vw, 75px);
+    }
+
+
+    .hero-image {
+        width: 90%;
+
+        align-self: flex-end;
+    }
+
+
+    .vanta-section {
+        display: block;
+
+        padding: 100px 0;
+    }
+
+
+    .section-number {
+        margin-bottom: 45px;
+    }
+
+
+    .section-title h2 {
+        font-size: clamp(55px, 15vw, 85px);
+
+        margin-top: 30px;
+    }
+
+
+    .section-text {
+        margin-top: 50px;
+
+        max-width: 100%;
+    }
+
+
+    .full-image,
+    .image-grid,
+    .color-system,
+    .poster-image {
+        margin-top: 60px;
+
+        width: 100%;
+    }
+
+
+    .full-image {
+        display: block;
+    }
+
+
+    .two-column,
+    .three-column {
+        grid-template-columns: 1fr;
+    }
+
+
+    .color-system {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 20px;
+    }
+
+
+    .color {
+        height: 110px;
+    }
+
+
+    .vanta-final {
+        padding: 120px 0 100px;
+    }
+
+
+    .vanta-final h2 {
+        font-size: clamp(90px, 25vw, 160px);
+
+        margin: 50px 0 35px;
+    }
+
+
+    .next-project {
+        align-items: flex-start;
+
+        padding-bottom: 100px;
+    }
+
+
+    .next-project a {
+        font-size: 28px;
+    }
+
+
+    footer {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+}
